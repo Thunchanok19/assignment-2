@@ -1,0 +1,36 @@
+## Git guide
+
+### Step 1
+
+Before beginning, a new project is created in RStudio. All files related to the project are stored within the same project folder to ensure reproducibility.
+
+Within the RStudio project, a new Quarto document (.qmd file) is created. This file is saved in the same folder as the .Rproj file.
+
+To render a .qmd file as an HTML document, the output format is specified in the YAML header at the top of the file by setting format: html. This instructs Quarto to generate an HTML file when the document is rendered. The resulting file is saved as example.html in the same folder as the source .qmd file.
+
+The YAML header is defined as follows:
+
+title: "example"  
+author: "Thunchanok Udomittipong"  
+format: html
+
+### Step 2
+
+To initialise the folder as a Git repository, a remote repository is first created on the GitHub website. In this case, the repository is named assignment-2. 
+Next, the local project is initialised as a Git repository using the terminal with the following commands:
+
+**git init**  
+This command initialises Git tracking in the local project folder.
+
+**git remote add origin git\@github.com:Thunchanok19/assignment-2.git**  
+This connects the local repository to the remote GitHub repository. The repository URL is obtained from the GitHub interface by clicking the Code button and selecting the SSH option.  
+Also, note that you may need to restart RStudio for Git to update.
+
+**git add .**  
+This command adds all file changes to the staging area.
+
+**git commit -m "Initialise assignment-2 folder and add example.qmd file"**  
+This command creates a commit with a descriptive message explaining the changes.
+
+**git push origin main**
+This command pushes all commits to the remote GitHub repository.
