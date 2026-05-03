@@ -10,27 +10,51 @@ To render a .qmd file as an HTML document, the output format is specified in the
 
 The YAML header is defined as follows:
 
-title: "example"  
-author: "Thunchanok Udomittipong"  
+title: "example"\
+author: "Thunchanok Udomittipong"\
 format: html
 
 ### Step 2
 
-To initialise the folder as a Git repository, a remote repository is first created on the GitHub website. In this case, the repository is named assignment-2. 
-Next, the local project is initialised as a Git repository using the terminal with the following commands:
+To initialise the folder as a Git repository, a remote repository is first created on the GitHub website. In this case, the repository is named assignment-2. Next, the local project is initialised as a Git repository using the terminal with the following commands:
 
-**git init**  
-This command initialises Git tracking in the local project folder.
+-   **git init**\
+    This command initialises Git tracking in the local project folder.
 
-**git remote add origin git\@github.com:Thunchanok19/assignment-2.git**  
-This connects the local repository to the remote GitHub repository. The repository URL is obtained from the GitHub interface by clicking the Code button and selecting the SSH option.  
-Also, note that you may need to restart RStudio for Git to update.
+-   **git remote add origin git\@github.com:Thunchanok19/assignment-2.git**\
+    This connects the local repository to the remote GitHub repository. The repository URL is obtained from the GitHub interface by clicking the Code button and selecting the SSH option.\
+    Also, note that you may need to restart RStudio for Git to update.
 
-**git add .**  
-This command adds all file changes to the staging area.
+-   **git add .**\
+    This command adds all file changes to the staging area.
 
-**git commit -m "Initialise assignment-2 folder and add example.qmd file"**  
-This command creates a commit with a descriptive message explaining the changes.
+-   **git commit -m "Initialise assignment-2 folder and add example.qmd file"**\
+    This command creates a commit with a descriptive message explaining the changes.
 
-**git push origin main**
-This command pushes all commits to the remote GitHub repository.
+-   **git push origin main**\
+    This command pushes all commits to the remote GitHub repository.
+
+### Step 3
+
+The purpose of a branch is to make changes without affecting the main branch until it is ready. Any work done on a branch will stay on that branch unless it is merged.
+
+To create a new branch named testbranch, the following command is used:
+
+-   **git switch -c testbranch**\
+    This command creates a new branch and switches the HEAD pointer to the newly created branch.
+
+Altenatively:
+
+-   **git branch testbranch**\
+    This also creates a new branch, but does not switch to it. To switch to the branch, the following command is required, **git switch testbranch**.
+
+After making changes on the new branch, the changes need to be staged, committed, and pushed to the remote GitHub repository. This follows the same process as described in Step 2:
+
+-   **git add .** to add all file changes to the staging area.
+
+-   **git commit -m "Create testbranch and edit example.qmd file"**, to create a commit with a descriptive message.
+
+-   **git push origin testbranch**, to push the changes to the remote repository.\
+    In this case, testbranch is specified instead of main because the changes are made on the new branch.
+
+Changes made on testbranch.
